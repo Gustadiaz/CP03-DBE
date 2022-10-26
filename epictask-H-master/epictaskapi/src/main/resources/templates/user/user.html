@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head th:insert="_template :: head"></head>
+<body>
+    <header th:insert="_template :: header('user')"></header>
+
+    <div class="toolbar" >
+        <a class="button" href="/task/user/new" sec:authorize-url="POST /task/user">cadastrar usuário</a>
+    </div>
+
+    <div class="pagination">
+        <a th:href="${'/task/user?page=' + (users.number-1)}" th:if="${!users.first}"> anterior </a>
+        <span th:text="${users.number+1}"></span>
+        <a th:href="${'/task/user?page=' + (users.number+1)}" th:if="${!users.last}">próxima >> </a>
+    </div>
+
+    <div th:if="${message != null}" class="alert success">
+        <span th:text="${message}"></span>
+    </div>
+
+    <main class="cards">
+        <div class="card animated" th:each="user : ${users}">
+            <h2 th:text="${user.name}"></h2>
+            <!-- <div class="status"> -->
+                <!-- <svg>
+                    <circle cx="70" cy="70" r="70" />
+                    <circle cx="70" cy="70" r="70" th:style="${'stroke-dashoffset: ' + (440 - (440 * user.status) / 100) }" />
+                </svg> -->
+                <!-- <div class="number">
+                    <h2 th:text="${user.status + '%'}"></h2>
+                </div>
+            </div>
+            <div class="score">
+                <span class="material-icons">star</span>
+                <span th:text="${user.score + 'pts'}"></span>
+            </div> -->
+            <div class="actions">
+                <a th:href="${'/user/delete/' + user.id}" sec:authorize="hasRole('ADMIN')">
+                    <span class="material-icons">delete</span>
+                </a>
+                <a th:href="${'/user/' + user.id}">
+                    <span class="material-icons">edit</span>
+                </a>                
+            </div>
+           
+        </div>
+    </main>
+
+</body>
+</html>

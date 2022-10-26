@@ -1,0 +1,28 @@
+<head th:fragment="head">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{~/css/style.css}">
+    <title>Epic Task</title>
+</head>
+
+<header th:fragment="header(page)">
+    <div class="topo">
+        <h1>Epic Task</h1>
+        <div class="login-info">
+            <!--span sec:authentication="name"></!--span-->
+            <!--span th:text="${#authentication.name}"></!--span-->
+            <span sec:authentication="principal.name"></span>
+            <img class="avatar" th:src="${#authentication.principal.avatar}" alt="">
+            <a href="/logout"><span class="material-icons">logout</span></a>
+        </div>
+    </div>
+
+    <nav>
+        <ul>
+            <li th:classappend="${page=='task'}?active"><a href="/task">pendentes</a></li>
+            <li th:classappend="${page=='done'}?active"><a href="/task?filter=done">concluídas</a></li>
+            <li><a href="/user">usuários</a></li>
+        </ul>
+    </nav>
+</header>
