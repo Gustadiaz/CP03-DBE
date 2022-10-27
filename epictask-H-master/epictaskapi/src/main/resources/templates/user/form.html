@@ -36,6 +36,17 @@
                 ></textarea>
                 <span th:errors="*{email}"></span>
 
+                <label class="hide" for="description">usuário github</label>
+                <input
+                        placeholder="github user"
+                        type="text"
+                        id="githubuser"
+                        th:field="*{githubuser}"
+                        th:classappend="${#fields.hasErrors('githubuser')}?invalid"
+                        required="true"
+                >
+                <span th:errors="*{githubuser}"></span>
+
                 <label class="hide" for="description">senha</label>
                 <textarea 
                     placeholder="senha" 
