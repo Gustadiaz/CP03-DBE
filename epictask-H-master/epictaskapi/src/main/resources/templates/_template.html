@@ -22,7 +22,7 @@
         <ul>
             <li th:classappend="${page=='task'}?active"><a href="/task">pendentes</a></li>
             <li th:classappend="${page=='done'}?active"><a href="/task?filter=done">concluídas</a></li>
-            <li><a href="/user">usuários</a></li>
+            <li th:classappend="${page=='user'}?active"><a href="/user">usuários</a></li>
         </ul>
     </nav>
 </header>

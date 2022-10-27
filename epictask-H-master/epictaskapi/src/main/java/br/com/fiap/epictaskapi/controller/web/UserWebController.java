@@ -34,12 +34,12 @@ public class UserWebController {
     public ModelAndView index(@RequestParam(defaultValue = "all") String filter, @PageableDefault(size = 5) Pageable pageable){
         Page<User> list = service.listAll(pageable);
 
-        return new ModelAndView("task/done")
+        return new ModelAndView("user/user")
                     .addObject("users", list);
     }
 
     @GetMapping("new")
-    public String form(User user){
+    public String form(User user) {
         return "user/form";
     }
 
