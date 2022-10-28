@@ -90,6 +90,12 @@ nav li.active {
     padding-right: 2rem;
 }
 
+.current-score {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 2rem;
+}
+
 .buttons {
     display: flex;
     justify-content: space-between;
