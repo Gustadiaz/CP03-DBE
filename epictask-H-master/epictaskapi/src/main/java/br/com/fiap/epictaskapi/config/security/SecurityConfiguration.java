@@ -34,8 +34,11 @@ public class SecurityConfiguration{
                 // Web
                 .antMatchers(HttpMethod.GET, "/task").authenticated()
                 .antMatchers(HttpMethod.GET, "/task/delete/**").hasRole("ADMIN")
-                .antMatchers(HttpMethod.POST, "/task").hasRole("ADMIN")
+                .antMatchers(HttpMethod.POST, "/task").permitAll()
 
+                .antMatchers(HttpMethod.GET, "/user").authenticated()
+                .antMatchers(HttpMethod.GET, "/user/delete/**").hasRole("ADMIN")
+                .antMatchers(HttpMethod.POST, "/user").permitAll()
 
                 // Infra
                 .antMatchers("/h2-console/**").permitAll()
