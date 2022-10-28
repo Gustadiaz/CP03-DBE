@@ -9,4 +9,4 @@ OTÁVIO SANTOS DO CARMO - RM87075
 
 WILLIAM DE SOUZA CARVALHO BOZZATO - RM86780
 
-Olá professor, tive um problema em colocar o Admin no usuário, por algum motivo quando colocava ele dava erro 403, e quando permitia todos ele funcionava perfeitamente, tentei de todas as formas arrumar a autenticação.
+
