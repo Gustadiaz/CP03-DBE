@@ -9,12 +9,17 @@
 <header th:fragment="header(page)">
     <div class="topo">
         <h1>Epic Task</h1>
-        <div class="login-info">
-            <!--span sec:authentication="name"></!--span-->
-            <!--span th:text="${#authentication.name}"></!--span-->
-            <span sec:authentication="principal.name"></span>
-            <img class="avatar" th:src="${#authentication.principal.avatar}" alt="">
-            <a href="/logout"><span class="material-icons">logout</span></a>
+        <div>
+            <div class="login-info">
+                <!--span sec:authentication="name"></!--span-->
+                <!--span th:text="${#authentication.name}"></!--span-->
+                <span sec:authentication="principal.name"></span>
+                <img class="avatar" th:src="${#authentication.principal.avatar}" alt="">
+                <a href="/logout"><span class="material-icons">logout</span></a>
+            </div>
+            <div class="current-score">
+                <h2 th:text="'Total Score: 150pts'"></h2>
+            </div>
         </div>
     </div>
 
